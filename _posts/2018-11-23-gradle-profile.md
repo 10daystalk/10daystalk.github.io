@@ -8,4 +8,4 @@ tags:
 - Gradle
 ---
 
-Use ./gradlew build --profile to tracking gradle task execution
+Use `./gradlew build --profile` to tracking gradle task execution
