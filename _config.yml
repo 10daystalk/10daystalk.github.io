@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-theme: jekyll-theme-cayman
-=======
 url: "http://jakewharton.com"
 
 highlighter: rouge
@@ -21,4 +18,3 @@ collections:
   podcasts:
 
 exclude: [vendor]
->>>>>>> gh-pages
