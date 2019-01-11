@@ -37,7 +37,9 @@ if (logging != null) {
 
 ### setMessageLogging
 那么，我们可以通过Looper的setMessageLogging为其设一个Printer。这样Message的执行我们就能抓取到了。
-
+```
+Looper.getMainLooper().setMessageLogging(this)
+```
 ### 实现代码
 ```
 class MainThreadBlockDetectorActivity : AppCompatActivity(), Printer {
