@@ -18,6 +18,7 @@ tags:
 <img src="/static/images/main_thread_block_01.png" height="446" width="489" class="float-top"/>
 
 了解Looper模型我们就知道，主线程的任务其实就是各种Message。Message的处理是由Looper来负责的，通过阅读Looper的源码可以发现，在每个Message处理之前和处理完成之后，都会通过一个Printer打印一条记录。下面的代码片段可以在Looper.loop()方法中找到。
+
 处理之前：
 ```
 final Printer logging = me.mLogging;
