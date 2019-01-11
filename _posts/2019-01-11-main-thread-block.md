@@ -14,7 +14,9 @@ tags:
 
 ### Handler、Looper、MeesageQueue与Message 
 主线程的调度其实就是一个Looper模型：
+
 <img src="/static/images/main_thread_block_01.png" height="446" width="489" class="float-top"/>
+
 了解Looper模型我们就知道，主线程的任务其实就是各种Message。Message的处理是由Looper来负责的，通过阅读Looper的源码可以发现，在每个Message处理之前和处理完成之后，都会通过一个Printer打印一条记录。
 处理之前：
 ```
