@@ -12,6 +12,7 @@ tags:
 
 ### 统计原理
 ![统计原理](https://github.com/jinkg/jinkg.github.io/blob/master/static/images/fps_01.png)
+
 当某一事件触发时，我们开始记录下系统绘制的帧数。事件结束或者到达一定时长时，停止记录。此时 帧率 = 帧数 / (start - end)。
 
 有几个因素会影响统计精度：
