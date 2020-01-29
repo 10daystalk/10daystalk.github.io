@@ -1,7 +1,7 @@
 ---
 title: Android统计列表滑动帧率
 layout: post
-
+auther:  zpl
 categories: post
 tags:
 - Android
