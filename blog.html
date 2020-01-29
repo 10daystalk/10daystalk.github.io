@@ -8,6 +8,7 @@ tab: posts
 {% for post in site.categories.post %}
   <li class="presentation">
     <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    <span class="auther">{{ post.auther | auther: "" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
 {% endfor %}
