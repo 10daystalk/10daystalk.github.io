@@ -1,15 +1,9 @@
-> Live  Read  Discover
+自1840年至今，历四个甲子，每逢庚子必使我人民蒙苦。
 
-I believe that meaningful life is nothing more than three things: to live, to read, and to discover.
+今又庚子，疫情肆虐，其状之惨，百年未见。
 
-For a long time, I will share some of my experiences and notes about reading and learning here. On the one hand, it is for the organization of my own knowledge, on the other hand, I also hope that it is helpful for the people with similar interests. I mainly write  about the following two aspects:
+我青年人之手脚，岂能受缚于沙发之上！吾正血气方刚，亦不愿将精力碌碌无为于手机，电视之上！
 
-First, I graduated from the Department of Mathematics and now works with algorithms for statistics and data science. So I will send some meaningful articles recently I read, including my implementation code, and my understanding of the data science and the future.
+遂创制此站，为心中之思想，愈发之胸怀寻一出处。
 
-In addition, I am very interested in the study of social sciences. I also read some social science books. Therefore, when I am free, I will put some reading experience that I have summarized after I have studied.
-
-The upcoming 2019, I hope to progress with you.
-
-Beijing Zhongguancun Foundation Park
-
-2018/12/3 
+Contact us: 10daystalk@sina.cn
