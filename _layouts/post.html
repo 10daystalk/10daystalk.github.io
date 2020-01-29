@@ -38,7 +38,7 @@
     <div class="content post">
       <h2>{{ page.title }}</h2>
       <p class="post-meta">
-        Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%m %-d, %Y" }}
+        Posted by {% if page.author %}{{ page.author }}{% else %}{{ page.title }}{% endif %} on {{ page.date | date: "%m %-d, %Y" }}
       </p>
       
       {{ content }}
