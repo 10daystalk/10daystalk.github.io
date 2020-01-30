@@ -65,7 +65,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- endif -%}
 
 				<div class="post-preview item" data-tags="{{ _tags }}">
-				    <span class="date">{{ _article.date | date: "%Y-%m-%d" }}  {{_article.auther}} {_article.tags}}</span>
+				    <span class="date">{{ _article.date | date: "%Y-%m-%d" }}  {{ _article.auther}} {{ _article.tags}}</span>
                                     <a href="{{ _article.url }}">{{ _article.title }}</a>
 				</div>
 			{% endfor %}
