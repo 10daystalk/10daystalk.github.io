@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} - 十日谈</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700" type="text/css">
+    <link rel="stylesheet" href="/static/app.css" type="text/css">
+    {% feed_meta %}
+    <meta name="theme-color" content="#111111">
 
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="{{ page.title }}">
+    <meta name="og:description" content="Blog posts, GitHub, and more.">
+    <meta name="og:site_name" content="Kinglloy">
+    <meta name="og:url" content="{{ site.url }}">
+    <meta name="og:image" content="http://www.gravatar.com/avatar/e68309f117985270285ade8082f4877d?s=200">
+  </head>
 
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
