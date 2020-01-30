@@ -65,17 +65,8 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- endif -%}
 
 				<div class="post-preview item" data-tags="{{ _tags }}">
-				    <a href="{{ _article.url | prepend: site.baseurl }}">
-				        <h2 class="post-title">
-                            {{ _article.title }}
-				        </h2>
-				        {% if _article.subtitle %}
-				        <h3 class="post-subtitle">
-				            {{ _article.subtitle }}
-				        </h3>
-				        {% endif %}
-				    </a>
-					<hr>
+				    <span class="date">{{ _article.date | date: "%Y-%m-%d" }}  {{_article.auther}} {_article.tags}}</span>
+                                    <a href="{{ _article.url }}">{{ _article.title }}</a>
 				</div>
 			{% endfor %}
 		</div>
@@ -85,7 +76,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 <!--
 <ul class="presentation-list list-unstyled">
 {% for post in site.categories.post %}
-  <li class="presentation">
+  <li class="post">
     <span class="date">{{ post.date | date: "%Y-%m-%d" }}  {{post.auther}} {{post.tags}}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
