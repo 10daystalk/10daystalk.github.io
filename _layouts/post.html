@@ -48,7 +48,7 @@
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                         Previous<br>
-                        <span>{{page.previous.title}}</span>
+                        <span>{{page.previous.tags} {page.previous.title}}</span>
                         </a>
                     </li>
                     {% endif %}
@@ -56,7 +56,7 @@
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                         Next<br>
-                        <span>{{page.next.title}}</span>
+                        <span>{{page.next.tags} {page.next.title}}</span>
                         </a>
                     </li>
                     {% endif %}
