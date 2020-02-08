@@ -12,89 +12,32 @@
     <div id="main" style="width: 600px;height:400px;"></div>
      <script type="text/javascript">
          
-      var myChart = echarts.init(document.getElementById("main"));
-    
-     $.get('/json/aqi-beijing.json', function (data) {
-        myChart.setOption({
-            title : {
-                /*text : '睡眠质量监测',
-                     textStyle:{
-                      fontSize:12,
-                        }*/
-                    
-            },
-            tooltip : {
-                trigger : 'axis'
-            },
-            xAxis : {
-                 data: data.map(function (item) {
-                return item[0];
-            })
-            },
-            yAxis : {
-                splitLine : {
-                    show : false
-                }
-            },
-        /*  toolbox : {
-                left : 'center',
-                feature : {
-                    dataZoom : {
-                        yAxisIndex : 'none'
-                    },
-                    restore : {},
-                    saveAsImage : {}
-                }
-            },*/
-            dataZoom : [ {
-                startValue : '2014-06-01'
-            }, {
-                type : 'inside'
-            } ],
-            visualMap : {
-                top : 10,
-                right : 10,
-                pieces : [ {
-                    gt : 1,
-                    lte : 2,
-                    label:'浅睡',
-                    color : '#ff9933'
-                }, {
-                    gt : 2,
-                    lte : 3,
-                    label:'深睡',
-                    color : '#cc0033'
-                }, {
-                    gt : 3,
-                    lte : 4,
-                label:'熟睡',
-                    color : '#660099'
-                } ],
-                
-                
-                outOfRange : {
-                    color : '#999'
-                }
-            },
-            series : {
-                name : '睡眠',
-                type : 'line',
-                data: data.map(function (item) {
-                return item[1];
-            }),
-                markLine : {
-                    silent : true,
-                    data : [ {
-                        yAxis : 1
-                    }, {
-                        yAxis : 2
-                    }, {
-                        yAxis : 3
-                    } ]
-                }
-            }
+      var container = document.getElementById('container');
+        // 初始化echarts对象
+        var myContainer = echarts.init(container);
+$.get('/json/echarts.json', function(data) {//与服务器连接成功
+            console.log(data);//获取到的json数据是个对象
+            myContainer.setOption(option = {
+                title:{
+                    text:'ECharts 异步加载数据'
+                },
+                tooltip:{},
+                legend:{
+                    data:['访问量']
+                },
+                 xAxis:{
+                    data:data.name
+                },
+                yAxis:{},
+                series:[
+                    {
+                        name:'访问量',
+                        type:'line',
+                        data:data.data
+                    }
+                ]
+            });
         });
-        })
         myChart.setOption(option)     
         
         </script>
