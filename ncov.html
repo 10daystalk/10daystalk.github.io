@@ -9,38 +9,73 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px;height:400px;"></div>
-     <script type="text/javascript">
-         
-      var container = document.getElementById('container');
-        // 初始化echarts对象
-        var myContainer = echarts.init(container);
-$.get('/json/echarts.json', function(data) {//与服务器连接成功
-            console.log(data);//获取到的json数据是个对象
-            myContainer.setOption(option = {
-                title:{
-                    text:'ECharts 异步加载数据'
-                },
-                tooltip:{},
-                legend:{
-                    data:['访问量']
-                },
-                 xAxis:{
-                    data:data.name
-                },
-                yAxis:{},
-                series:[
-                    {
-                        name:'访问量',
-                        type:'line',
-                        data:data.data
-                    }
-                ]
-            });
-        });
-        myContainer.setOption(option)     
+    <div id="main" style="height:400px;"></div>
+  <script>
+        var myChart = echarts.init(document.getElementById('main'));
         
-        </script>
-    
+        //根据需求进行相应的设置
+        var option = {
+           
+              title: { //图表标题，可以通过show:true/false控制显示与否，subtext:'二级标题',
+                text: ''
+            },
+            backgroundColor: '#FFFFFF',
+            tooltip : {//鼠标浮动时的工具条，显示鼠标所在区域的数据，trigger这个地方每种图有不同的设置
+                trigger: 'axis'
+            },
+            legend: {// 图例，每条折线或者项对应的示例
+                data:[]
+            },
+            calculable : true,
+            xAxis : [ ],
+            yAxis : [ ],
+            series : [  ]
+        };
+
+
+$.ajax({
+            url:"/json/pros_conf.json",
+            type:'get',
+            dataType:'json'
+            success:function(jsons){
+                var Item = function(){
+                    return {
+                        name:'',
+                        type:'line',
+                        // itemStyle: {normal: {areaStyle: {type: 'default'}}},这为线条设置
+                        label: {normal: {position: 'top'}},
+                        markLine: {data: [{type: 'average', name: '平均值'}]},
+                        data:[]
+                    }
+                };// series中的每一项为一个item,所有的属性均可以在此处定义
+
+                var Series = []; // 准备存放图表数据
+                Series.push(jsons.henan);
+                Series.push(jsons.jiangsu);
+                Series.push(jsons.jiangxi);
+                Series.push(jsons.hunan);
+                Series.push(jsons.anhui);
+                Series.push(jsons.guangdong);
+                Series.push(jsons.zhejiang);
+      
+      
+
+                // option.series.data=jsons.
+                option.xAxis[0].data = jsons.date;// 设置X轴数据了
+                // 折线图可设置上下两个X轴，必须是option.xAxis[0].data = json.xcontent
+                option.legend.data = jsons.province;// 设置图例
+                option.series = Series; // 设置图表
+                myChart.setOption(option);// 重新加载图表
+            },
+            error:function(){
+                alert("数据加载失败！请检查数据链接是否正确");
+            }
+        });
+
+
+       // 初次加载图表
+        myChart.setOption(option);
+    </script>
+
 </body>
 </html
