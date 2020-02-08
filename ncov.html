@@ -31,10 +31,10 @@
             yAxis : [ ],
             series : [  ]
         };
-
+myChart.showLoading();
 
 $.ajax({
-            url:"/json/pros_conf.json",
+            url:"/json/pros_conf",
             type:'get',
             dataType:'json'
             success:function(jsons){
