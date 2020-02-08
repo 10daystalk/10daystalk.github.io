@@ -49,14 +49,16 @@ $.ajax({
                     }
                 };// series中的每一项为一个item,所有的属性均可以在此处定义
 
+                var legends = [];// 准备存放图例数据
                 var Series = []; // 准备存放图表数据
-                Series.push(jsons.henan);
-                Series.push(jsons.jiangsu);
-                Series.push(jsons.jiangxi);
-                Series.push(jsons.hunan);
-                Series.push(jsons.anhui);
-                Series.push(jsons.guangdong);
-                Series.push(jsons.zhejiang);
+                var json = jsons.confirmed;// 后台返回的json
+                for(var i=0;i < json.length;i++){
+                    var it = new Item();
+                    it.name = json[i].name;// 先将每一项填充数据
+                    legends.push(json[i].name);// 将每一项的图例名称也放到图例的数组中
+                    it.data = json[i].data;
+                    Series.push(it);// 将item放在series中
+                }
       
       
 
