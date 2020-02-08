@@ -32,9 +32,11 @@
             series : [  ]
         });
 myChart.showLoading();
+      var legends = [];// 准备存放图例数据
+      var Series = []; // 准备存放图表数据
 
 $.ajax({
-            url:"/json/pros_conf",
+            url:"/json/pros_conf.json",
             type:'get',
             dataType:'json'
             success:function(jsons){
@@ -49,8 +51,7 @@ $.ajax({
                     }
                 };// series中的每一项为一个item,所有的属性均可以在此处定义
 
-                var legends = [];// 准备存放图例数据
-                var Series = []; // 准备存放图表数据
+                
                 var json = jsons.confirmed;// 后台返回的json
                 for(var i=0;i < json.length;i++){
                     var it = new Item();
