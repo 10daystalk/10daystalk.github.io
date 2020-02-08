@@ -14,7 +14,7 @@
         var myChart = echarts.init(document.getElementById('container'));
         
         //根据需求进行相应的设置
-        var option = {
+        myChart.setOption(option = {
            
               title: { //图表标题，可以通过show:true/false控制显示与否，subtext:'二级标题',
                 text: '各省确诊数目'
@@ -30,7 +30,7 @@
             xAxis : [ ],
             yAxis : [ ],
             series : [  ]
-        };
+        });
 myChart.showLoading();
 
 $.ajax({
