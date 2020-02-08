@@ -10,73 +10,94 @@
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width: 600px;height:400px;"></div>
-
-    <script type="text/javascript">
-
-        var myContainer = echarts.init(document.getElementById('container'));
- myContainer.setOption(option = {
-    title: {
-        text: '折线图堆叠'
-    },
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
-        {
-            name: '邮件营销',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-        },
-        {
-            name: '联盟广告',
-            type: 'line',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-        },
-        {
-            name: '视频广告',
-            type: 'line',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-        },
-        {
-            name: '直接访问',
-            type: 'line',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-        },
-        {
-            name: '搜索引擎',
-            type: 'line',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-        }
-    ]
-});
-myContainer.setOption(option);
-</script>
+     <script type="text/javascript">
+         
+      var myChart = echarts.init(document.getElementById("main"));
+    
+     $.get('/json/aqi-beijing.json', function (data) {
+        myChart.setOption({
+            title : {
+                /*text : '睡眠质量监测',
+                     textStyle:{
+                      fontSize:12,
+                        }*/
+                    
+            },
+            tooltip : {
+                trigger : 'axis'
+            },
+            xAxis : {
+                 data: data.map(function (item) {
+                return item[0];
+            })
+            },
+            yAxis : {
+                splitLine : {
+                    show : false
+                }
+            },
+        /*  toolbox : {
+                left : 'center',
+                feature : {
+                    dataZoom : {
+                        yAxisIndex : 'none'
+                    },
+                    restore : {},
+                    saveAsImage : {}
+                }
+            },*/
+            dataZoom : [ {
+                startValue : '2014-06-01'
+            }, {
+                type : 'inside'
+            } ],
+            visualMap : {
+                top : 10,
+                right : 10,
+                pieces : [ {
+                    gt : 1,
+                    lte : 2,
+                    label:'浅睡',
+                    color : '#ff9933'
+                }, {
+                    gt : 2,
+                    lte : 3,
+                    label:'深睡',
+                    color : '#cc0033'
+                }, {
+                    gt : 3,
+                    lte : 4,
+                label:'熟睡',
+                    color : '#660099'
+                } ],
+                
+                
+                outOfRange : {
+                    color : '#999'
+                }
+            },
+            series : {
+                name : '睡眠',
+                type : 'line',
+                data: data.map(function (item) {
+                return item[1];
+            }),
+                markLine : {
+                    silent : true,
+                    data : [ {
+                        yAxis : 1
+                    }, {
+                        yAxis : 2
+                    }, {
+                        yAxis : 3
+                    } ]
+                }
+            }
+        });
+        })
+        myChart.setOption(option)     
+        
+        </script>
+    
 </body>
 </html
