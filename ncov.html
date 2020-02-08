@@ -28,7 +28,7 @@
         //为了效果明显，我们做了延迟读取数据
         setTimeout(function() {
             //异步加载数据,get请求我们刚刚准备的json文件,正式开发中调用相应的接口
-            $.get('echarts.json', function(res) {
+            $.get('/json/echarts.json', function(res) {
                 console.log(res)
                 //获取数据后，隐藏loading动画
                 myContainer.hideLoading();
@@ -118,8 +118,6 @@
         }, 1000);
     }
     bindData();
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
     </script>
 </body>
 </html
