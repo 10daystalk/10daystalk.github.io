@@ -9,15 +9,15 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="height:400px;"></div>
+    <div id="container" style="height:400px;"></div>
   <script>
-        var myChart = echarts.init(document.getElementById('main'));
+        var myChart = echarts.init(document.getElementById('container'));
         
         //根据需求进行相应的设置
         var option = {
            
               title: { //图表标题，可以通过show:true/false控制显示与否，subtext:'二级标题',
-                text: ''
+                text: '各省确诊数目'
             },
             backgroundColor: '#FFFFFF',
             tooltip : {//鼠标浮动时的工具条，显示鼠标所在区域的数据，trigger这个地方每种图有不同的设置
@@ -71,6 +71,7 @@ $.ajax({
             },
             error:function(){
                 alert("数据加载失败！请检查数据链接是否正确");
+                myChart.hideLoading();
             }
         });
 
