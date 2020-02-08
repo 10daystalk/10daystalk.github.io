@@ -24,7 +24,7 @@ function loadTwoLine() {
             trigger: 'axis'
         },
         legend: {
-            data: ['进件', '办结']
+            data: ['河南省', '江苏省', '江西省', '湖南省', '安徽省', '广东省', '浙江省']
         },
         toolbox: {
             show: true,
@@ -47,47 +47,45 @@ function loadTwoLine() {
             splitLine: { show: false },//去除网格线
             name: ''
         },
-        series: [{
-            name: '进件',
-            type: 'line',
-            symbol: 'emptydiamond',    //设置折线图中表示每个坐标点的符号 emptycircle：空心圆；emptyrect：空心矩形；circle：实心圆；emptydiamond：菱形
-            data: []
-        },
-        {
-            name: '办结',
-            type: 'line',
-            symbol: 'emptydiamond',    //设置折线图中表示每个坐标点的符号 emptycircle：空心圆；emptyrect：空心矩形；circle：实心圆；emptydiamond：菱形
-            data: []
-        }]
+        series: []
     });
     myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
-    var names = [];    //类别数组（实际用来盛放X轴坐标值）    
-    var series1 = [];
-    var series2 = [];
+    //var names = [];    //类别数组（实际用来盛放X轴坐标值）    
+    //var series1 = [];
+    //var series2 = [];
     $.ajax({
         type: 'get',
-        url: '/json/lineTwo.json',//请求数据的地址
-        dataType: "json",        //返回数据形式为json
-        success: function (result) {
-            //请求成功时执行该函数内容，result即为服务器返回的json对象           
-            $.each(result.jinJian, function (index, item) {
-                names.push(item.AREA);    //挨个取出类别并填入类别数组
-                series1.push(item.LANDNUM);
-            });
-            $.each(result.banJie, function (index, item) {
-                series2.push(item.LANDNUM);
-            });
+        url: '/json/pros_conf.json',//请求数据的地址
+        dataType: "json",//返回数据形式为json
+        success: function (jsons) {
+        var Item = function(){
+                    return {
+                        name:'',
+                        type:'line',
+                        symbol: 'emptydiamond',
+                        // itemStyle: {normal: {areaStyle: {type: 'default'}}},这为线条设置
+                        //label: {normal: {position: 'top'}},
+                        // markLine: {data: [{type: 'average', name: '平均值'}]},
+                        data:[]
+                    }
+                };// series中的每一项为一个item,所有的属性均可以在此处定义
+               // var legends = [];// 准备存放图例数据
+                var Series = []; // 准备存放图表数据
+                var json = jsons.data;// 后台返回的json
+                for(var i=0;i < json.length;i++){
+                    var it = new Item();
+                    it.name = json[i].name;// 先将每一项填充数据
+                    legends.push(json[i].name);// 将每一项的图例名称也放到图例的数组中
+                    it.data = json[i].data;
+                    Series.push(it);// 将item放在series中
+                }
+        
             myChart.hideLoading();    //隐藏加载动画
             myChart.setOption({        //加载数据图表
                 xAxis: {
-                    data: names
+                    data: jsons.date
                 },
-                series: [{                    
-                    data: series1
-                },
-                {
-                    data: series2
-                }]
+                series: Series
             });
         },
         error: function (errorMsg) {
