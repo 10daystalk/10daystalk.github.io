@@ -3,7 +3,8 @@ function loadTwoLine() {
     // 显示标题，图例和空的坐标轴
     myChart.setOption({
         title: {
-            text: '七省新增确诊病例'
+            text: '七省新增确诊病例',
+            left:'center'
         },
         tooltip: {
             trigger: 'axis'
@@ -25,7 +26,7 @@ function loadTwoLine() {
         xAxis: {
             type: 'category',
             boundaryGap: true, //取消左侧的间距
-            axisLabel: {rotate: 50, interval: 1},
+            axisLabel: {rotate: 50, interval: 0},
             data: []
         },
         yAxis: {
