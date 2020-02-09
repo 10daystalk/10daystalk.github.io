@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="container" style="height:400px;"></div>
+    <div id="container" style="width:600px; height:400px;"></div>
   
 <script type="text/JavaScript">
  
@@ -29,22 +29,22 @@ function loadTwoLine() {
         toolbox: {
             show: true,
             feature: {
-                mark: { show: true },
+                //mark: { show: true },
                 dataView: { show: true, readOnly: false },
-                magicType: { show: true, type: ['line', 'bar'] },
-                restore: { show: true },
+                //magicType: { show: true, type: ['line', 'bar'] },
+                //restore: { show: true },
                 saveAsImage: { show: true }
             }
         },
         calculable: true,
         xAxis: {
             type: 'category',
-            boundaryGap: false, //取消左侧的间距
+            boundaryGap: true, //取消左侧的间距
             data: []
         },
         yAxis: {
             type: 'value',
-            splitLine: { show: false },//去除网格线
+            splitLine: { show: true },//去除网格线
             name: ''
         },
         series: [{
@@ -95,7 +95,7 @@ function loadTwoLine() {
     var series7 = [];
     $.ajax({
         type: 'get',
-        url: '/json/pros_conf.json',//请求数据的地址
+        url: '/json/pros_info.json',//请求数据的地址
         dataType: "json",        //返回数据形式为json
         success: function (result) {
             //请求成功时执行该函数内容，result即为服务器返回的json对象           
