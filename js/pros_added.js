@@ -12,7 +12,7 @@ function loadTwoLine() {
             data: ['河南省', '江苏省', '江西省', '湖南省', '安徽省', '广东省', '浙江省']
         },
         toolbox: {
-            show: true,
+            show: false,
             feature: {
                 //mark: { show: true },
                 //dataView: { show: true, readOnly: false },
@@ -25,7 +25,7 @@ function loadTwoLine() {
         xAxis: {
             type: 'category',
             boundaryGap: true, //取消左侧的间距
-            axisLabel: {rotate: 50, interval: 1}
+            axisLabel: {rotate: 50, interval: 1},
             data: []
         },
         yAxis: {
