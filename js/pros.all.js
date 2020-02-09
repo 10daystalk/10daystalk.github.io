@@ -2,7 +2,7 @@ var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
 option = null;
-$.get(ROOT_PATH + '/json/life-expectancy-table.json', function (data) {
+$.get('/json/life-expectancy-table.json', function (data) {
 
     var sizeValue = '57%';
     var symbolSize = 2.5;
