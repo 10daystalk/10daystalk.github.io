@@ -25,6 +25,7 @@ function loadTwoLine() {
         xAxis: {
             type: 'category',
             boundaryGap: true, //取消左侧的间距
+            axisLabel: {rotate: 50, interval: 1}
             data: []
         },
         yAxis: {
