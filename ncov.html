@@ -10,9 +10,88 @@
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="container" style="width:600px; height:400px;"></div>
-  
+  <!--
 <script type="text/JavaScript" src="/js/pros_added.js"></script>
-  
+  -->
+    <script>$(function () {
+      var url = window.location.href.split('#')[0];
+      url = url.replace(/&/g, '%26');
+      var showDesc = [
+        '海量免费图表模板，体验一分钟数据可视化的快感！',
+        '为什么别人的图表都这么美观？在这里获得你的答案！',
+        '不会编程还可以做出这么酷炫的交互图表，被自己震惊!'
+      ]
+      var showImg = [
+        'https://ss1.dydata.io/v2/charts/dywchat_linechart.png',
+        'https://ss1.dydata.io/v2/charts/dywchat_piechart.png',
+        'https://ss1.dydata.io/v2/charts/dywchat_barchart.png'
+      ]
+      var index = Math.floor(Math.random() * 3);
+      var title, show, descText;
+
+      setTimeout(() => {
+        descText = $('.project-description').html() ? $('.project-description').html() : 'www.dydata.io';
+        $.ajax({
+          url: "https://dydata.io/vis/share/wechat/jsshare?url=" + url,
+          type: "GET",
+          async: true,
+          cache: false,
+          dataType: "json",
+          success: function (data) {
+            wx.config({
+              debug: false,
+              appId: "wxb666f3153cb1fa13",
+              timestamp: data.data.timestamp,
+              nonceStr: data.data.nonceStr,
+              signature: data.data.signature,
+              jsApiList: ['checkJsApi', 'chooseWXPay', 'onMenuShareAppMessage', 'onMenuShareTimeline']
+            });
+
+            wx.ready(function () {
+
+              title = $('.title').html()
+              if (!title || title === '未命名') {
+                title = '找数据，做图表，上镝数！'
+              }
+              document.title = title;
+
+              // 分享给朋友
+              wx.onMenuShareAppMessage({
+                title: title,
+                desc: descText,
+                link: url,
+                imgUrl: showImg[index],
+                type: '',
+                dataUrl: '',
+                success: function () {
+                },
+                cancel: function () {
+                }
+              })
+
+              // 朋友圈
+              wx.onMenuShareTimeline({
+                title: title,
+                link: url,
+                imgUrl: showImg[index],
+                success: function () {
+                }
+              })
+            })
+          },
+          error: function () {
+            console.log(`err`);
+            return;
+          }
+        });
+      }, 1000);
+    });</script><script>var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?07397da1b7bf662b93ece50bb615febf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();</script>
 
 </body>
 </html
