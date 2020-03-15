@@ -4,7 +4,20 @@
     <meta charset="utf-8">
     <title>ECharts</title>
 <style type="text/css">
-    body{text-align:center}
+* { margin:0; padding:0; }
+ul { clear:both; }
+.test_box { display:table-cell; width:110px; height:110px; vertical-align:middle; text-align:center; *float:left; *font-family:simsun; *font-size:0px;*line-height:1; border:1px solid #000000; margin:20px; }
+.test_box img { vertical-align:middle; }
+
+
+.test_box2 { display:table-cell; width:250px; height:250px; line-height:250px; font-size:0; vertical-align:middle; text-align:center; *display:block; *float:left; *font-size:218px; *font-family:'Arial'; margin:20px; border:1px solid #000; }  <!--font-size:height*0.873; 加line-height偏下，去掉偏上-->
+.test_box2 img { display:inline; max-width:250px; max-height:250px; vertical-align:middle; }
+
+
+.test_box3 { display:table-cell; width:110px; height:110px; vertical-align:middle; text-align:center; font-size:0px; background-color:pink; margin:20px; *display:block; *float:left; }
+.test_box3 img { display:inline-block; vertical-align:middle; *margin-top:expression((parentElement.offsetHeight-this.offsetHeight)/2); } <!--当父元素有边框时，margin-top值要-1-->
+
+
 </style>
     <!-- 引入 echarts.js -->
     <script src="/js/echarts.js" type="text/javascript" charset="utf-8"></script>
@@ -17,7 +30,7 @@
 </div>
 
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="container" style="width:100%; height:400px;margin-left:10%;margin-right:10%;"></div>
+    <div id="container" style="width:100%; height:400px;"></div>
 <script type="text/JavaScript" src="/js/pros_added.js"></script>
 
 </body>
