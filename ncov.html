@@ -4,8 +4,28 @@
     <meta charset="utf-8">
     <title>ECharts</title>
     <style>
-        body{text-align:center}
-    </style>
+  .box {
+    width: 200px;
+    height: 400px;
+    background: yellow;
+    text-align: center;
+  }
+
+  .box .child {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .box .flag {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+</style>
     <!-- 引入 echarts.js -->
     <script src="/js/echarts.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript"src="/js/jquery.min.js"></script>
