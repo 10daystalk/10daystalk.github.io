@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,16 +11,9 @@ ul { clear:both; }
 .test_box img { vertical-align:middle; }
 
 
-.test_box2 { display:table-cell; width:250px; height:250px; line-height:250px; font-size:0; vertical-align:middle; text-align:center; *display:block; *float:left; *font-size:218px; *font-family:'Arial'; margin:20px; border:1px solid #000; }  <!--font-size:height*0.873; 加line-height偏下，去掉偏上-->
-.test_box2 img { display:inline; max-width:250px; max-height:250px; vertical-align:middle; }
-
-
-.test_box3 { display:table-cell; width:110px; height:110px; vertical-align:middle; text-align:center; font-size:0px; background-color:pink; margin:20px; *display:block; *float:left; }
-.test_box3 img { display:inline-block; vertical-align:middle; *margin-top:expression((parentElement.offsetHeight-this.offsetHeight)/2); } <!--当父元素有边框时，margin-top值要-1-->
 
 
 </style>
-    <!-- 引入 echarts.js -->
     <script src="/js/echarts.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript"src="/js/jquery.min.js"></script>
 </head>
@@ -29,12 +23,99 @@ ul { clear:both; }
     <p style="color:#e2e3e3; font-size: 25px ; font-weight: 900"  >COVID-19疫情数据可视化结果</p>
 </div>
 
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="container" style="width:100%; height:400px;"></div>
-    <!--
     <script type="text/JavaScript" src="/js/radar.js"></script>
-    -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
 </body>
 </html
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<style>
+	body{text-align:center}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+<div id="container" style="width:500px">
+
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">毕业设计</h1></div>
+
+<div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+<b>菜单</b><br>
+HTML<br>
+CSS<br>
+JavaScript</div>
+
+<div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+</div>
+<script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '基础雷达图'
+    },
+    tooltip: {},
+    legend: {
+        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+    },
+    radar: {
+        // shape: 'circle',
+        name: {
+            textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 3,
+                padding: [3, 5]
+            }
+        },
+        indicator: [
+            { name: '销售（sales）', max: 6500},
+            { name: '管理（Administration）', max: 16000},
+            { name: '信息技术（Information Techology）', max: 30000},
+            { name: '客服（Customer Support）', max: 38000},
+            { name: '研发（Development）', max: 52000},
+            { name: '市场（Marketing）', max: 25000}
+        ]
+    },
+    series: [{
+        name: '预算 vs 开销（Budget vs spending）',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data: [
+            {
+                value: [4300, 10000, 28000, 35000, 50000, 19000],
+                name: '预算分配（Allocated Budget）'
+            },
+            {
+                value: [5000, 14000, 28000, 31000, 42000, 21000],
+                name: '实际开销（Actual Spending）'
+            }
+        ]
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+	
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+https://www.github.com</div>
+
+</div>
+ 
+</body>
+</html>
 
