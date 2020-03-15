@@ -23,6 +23,24 @@
     </p>
     <p style="color:#e2e3e3; font-size: 15px ;" >&nbsp;&nbsp;Zhanglab@AMSS</p>
 </div>
+    <div class="drcard">
+  <h2 class="drh2">数据统计
+      <span class="drdue2">
+               截止时间 2020-03-14 15:00
+        <b onclick = "tabopen('tjsj')" class="fa fa-question-circle-o bigfonts float-right drfont"  style="font-size: 10px" aria-hidden="true">数据来源</b>
+      </span>
+  </h2>
+
+  <div id="tjsj" class="alert dr-alert-success" role="alert" hidden>
+    <p style="font-size: 10px">数据来源<br/>
+      1. 原始数据：来源于全国以及各省市卫建委网站。<br/>
+      2. 预测数据：是利用近7日数据，基于SIJR模型计算得出。
+    </p>
+    <button  style="margin-left: 80% ;font-size: 10px" onclick="tabclose('tjsj')" type="button" class="btn dr-btn-outline-primary" >
+      收起
+    </button>
+  </div>
+</div>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="container" style="width:100%; height:400px;"></div>
 <script type="text/JavaScript" src="/js/pros_added.js"></script>
