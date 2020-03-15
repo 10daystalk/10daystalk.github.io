@@ -1,0 +1,304 @@
+/**
+ * 首页面
+ */
+#com{
+	margin-top:50px;
+	border: solid 1px silver;
+	border-radius:5px;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+#jg{
+	padding: 3px 20px 10px 20px;
+}
+#jg li{
+	padding: 2px 0px;
+}
+#jg div{
+	text-indent: 2em;
+	line-height: 30px;
+	margin-bottom: 0px;
+}
+.mis{
+	text-indent: 2em;
+	margin-bottom: 10px;
+}
+.container{
+	margin-top: 20px;
+}
+#downloadss a{
+	padding: 20px 0px 0px 20px;
+}
+#downloadss li{
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 20px 0px 0px 0px;
+}
+#min img{
+	border-radius: 5px;
+}
+.tbl2 li{
+	line-height: 20px;
+	padding: 5px 15px;
+	border-bottom: solid 1px silver;
+}
+.tbl2 .list-unstyled li:last-child{
+	border: 0px;
+}
+.tbl2 div{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.tbl1 li{
+	line-height: 27px;
+	padding: 10px 15px;
+	border-bottom: solid 1px silver;
+}
+.tbl1 .list-unstyled li:last-child{
+	border: 0px;
+}
+.tbl1 div{
+	height: 131px;
+	overflow : hidden;
+}
+.mimg{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display:-webkit-box;
+	-webkit-line-clamp:3;
+	-webkit-box-orient: vertical;
+}
+.tbl1 a{
+	font-weight: bold;
+}
+.mimd{
+	width: 100%;
+	border: solid 1px silver;
+	border-radius: 5px;
+	height: 300px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#sl{
+	border: solid 1px silver;
+	border-radius: 5px;
+}
+#ggs{
+	padding: 10px;
+	background:#394381;
+	border-radius: 5px;
+	background: #f5f5f5;
+	color: #333333;
+	margin-left: 0px;
+	border-bottom: solid 1px silver;
+}
+#ggs a{
+	color:#337ab7;
+}
+#gg{
+	padding: 10px;
+	background:#394381;
+	color: white; 
+	border-radius: 5px;
+	margin-left: 0px;
+}
+#gg a{
+	color: white; 
+}
+#gg li{
+	cursor: pointer;
+}
+.yan{
+	font-weight: bold;
+	font-size: 18px;
+	font-family: '微软雅黑';
+	text-align: center;
+	margin-top: 10px;
+	text-shadow:0px 0px 0.1px #414141;
+}
+.guan{
+	border: solid 1px silver;
+	border-radius: 5px;
+	height: 300px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.tagcloud{
+	position: relative;
+	top: 60px;
+}
+.tagcloud a{ 
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: block; 
+	padding: 8px 20px; 
+	font-weight: bold;
+	border-radius: 18px;
+}
+.tagcloud a:nth-last-child(1){
+	color: brown;
+}
+.tagcloud a:nth-last-child(2){
+	color: cornflowerblue;
+}
+.tagcloud a:nth-last-child(3){
+	color: sandybrown;
+}
+.tagcloud a:nth-last-child(4){
+	color: #286090;
+}
+.tagcloud a:nth-last-child(5){
+	color: brown;
+}
+.tagcloud a:nth-last-child(6){
+	color: cornflowerblue;
+}
+.tagcloud a:nth-last-child(7){
+	color: sandybrown;
+}
+.tagcloud a:nth-last-child(8){
+	color: #286090;
+}
+.tagcloud a:nth-last-child(9){
+	color: sandybrown;
+}
+.tagcloud a:nth-last-child(10){
+	color: #286090;
+}
+/**
+ * 机构页面
+ */
+#ms{
+	padding-top: 10px;
+}
+.jg_1{
+	padding-bottom: 20px;
+}
+.jg_1 .active{
+	background: #394381;
+	color: white;
+	padding:10px;
+	border-radius: 5px;
+}
+.jg_1 ul{
+	border: solid 1px silver;
+	border-radius: 5px;
+}
+.qu{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#jg_s{
+	border: solid 1px silver;
+	border-radius: 5px;
+	padding-bottom:10px;
+}
+.minsa{
+	padding: 10px;
+}
+#jg_s .col-md-4{
+	padding: 10px 10px;
+	border-radius: 5px;
+}
+#jg_s .col-md-4:hover{
+	background: #eeeeee;
+}
+/**
+ * 重点学科
+ */
+#xue{
+	padding:0px 0px 20px 0px;
+}
+#xue .col-md-3{
+	margin: 0px 0px 25px 0px;
+}
+.saa{
+	border: solid 1px silver;
+	border-radius: 5px;
+	padding: 10px 15px;
+}
+.saa div{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.saa .xueke{
+	font-size: 1.3em;
+}
+.saa div:first-child{
+	font-weight: bold;
+	font-size: 1.2em;
+	color: maroon;
+	text-align: center;
+}
+.saa .thumbnail{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.saa .thumbnail img{
+	
+}
+/**
+ * 学者
+ */
+#lin{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.cur{
+	position:relative;
+	overflow: hidden;
+	text-align: center;
+	margin-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.cur .thumbnail{
+	margin-bottom: 0px;
+}
+.cur .thumbnail img{
+	width: 150px;
+	height: 170px;
+}
+.cur a:hover{
+	text-decoration: none;
+}
+.txt{
+	width:93%;
+	background:rgba(0,0,0,0.6);/*透明背景色，不透明其文字内容*/
+	position:absolute;
+	bottom:0px;
+	padding: 2px 0px;
+	color:#fff;
+	margin-left: -5px;
+	cursor: pointer;
+}
+/**
+ * 成果提交
+ */
+.tijia .list-unstyled li{
+	padding: 5px 10px;
+}
+.tijia{
+	padding-bottom: 20px;
+}
+.tijia form{
+	margin: 20px 0px;
+	text-align: center;
+}
+.tijia input{
+	font-size: 1.1em;
+	border-radius: 5px;
+	padding: 10px 50px;
+	color: white;
+	background-color: #33a1de;
+	box-shadow:inset 0px 0px 50px #3D63CC;
+	border: 0px;
+}
